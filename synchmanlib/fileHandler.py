@@ -10,6 +10,8 @@ config = {
 	'backupMax' : None
 }
 
+#add docstrings to all
+
 def readConfig(configFile):
 	try:
 		with open(configFile, 'r') as file:
@@ -27,7 +29,7 @@ def readConfig(configFile):
 	except Exception as e:
 		print(f'exception')
 
-def buildStructure(dir): # add error handling
+def buildStructure(dir=os.getcwd()): # add error handling
 	output = {}
 	for (root, dirs, files) in os.walk(dir, topdown=True):
 		fileStruct = dirs.copy()
